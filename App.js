@@ -1,6 +1,7 @@
 import { Image } from 'expo-image';
 import { StyleSheet, Text, View } from 'react-native';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import{View,Image,StyleSheet,ScrollView} from 'react-native';
 
 export default function App() {
   const size_icons = 38
@@ -28,7 +29,7 @@ export default function App() {
       </View>
 
       
-      {/* fotos do usuario */}
+      {/* fotos do usuario c5c5c5ff */}
       <View style={estilos.fotos}>
         <Image
         style={estilos.retrato}
@@ -56,9 +57,9 @@ export default function App() {
 
 const estilos = StyleSheet.create({
   container:{
-   
+    width:100,
     flex:1,
-    backgroundColor: '#c5c5c5ff',
+    backgroundColor: 'rgb(0, 0, 0)',
     alignItems: 'center',
     paddingTop: 10,
   
@@ -66,7 +67,7 @@ const estilos = StyleSheet.create({
   card:{
     width: 250,
     height: 250,
-    borderColor: '#000',
+    borderColor: '#c5c5c5ff',
     borderWidth: 5,
     borderStyle: 'solid',
     borderRadius: '50%',
@@ -91,15 +92,20 @@ const estilos = StyleSheet.create({
   padding:20
   },
   fotos:{
-  alignItems: 'center',
+  alignItems: 'flex-start',
   flexDirection: 'row',
-  flex: 'wrap'
-  
+  flexWrap:'wrap',
+  justifyContent:'flex-start',
+  width:"90%",
+  gap:3,
+  padding:3
   },
   retrato:{
-  width:130,
-  height:200
-  
+  flexGrow:1,
+  flexShrink:1,
+  objectFit:'cover',
+  height:300,
+  aspectRatio:1,
   }
 
 });
