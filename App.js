@@ -6,6 +6,8 @@ export default function App() {
   const size_icons = 38
   const color_icons = "#fff"
   return (
+
+    //inicio foto de perfil
     <View style={estilos.container}>
          <View style={estilos.card}>
            <Image
@@ -13,24 +15,36 @@ export default function App() {
              source="https://img.icons8.com/doodle/1200/bart-simpson.jpg"        
           />
       </View>
-         <View style={estilos.infos}>
-      <View style={estilos.social}>
+
+    {/*informaçoes do usuario */}
+      <View style={estilos.infos}>
+        <View style={estilos.social}>
            <FontAwesome5 name="facebook" size={size_icons} color= {color_icons}/>
            <FontAwesome5 name="instagram"size={size_icons} color= {color_icons}/>
            <FontAwesome5 name="whatsapp" size={size_icons} color= {color_icons}/>
            <FontAwesome5 name="github"   size={size_icons} color= {color_icons}/>
            <FontAwesome5 name="tiktok"   size={size_icons} color= {color_icons}/>
-      </View>
+        </View>
       </View>
 
+      
+      {/* fotos do usuario */}
       <View style={estilos.fotos}>
-        <Image
-        style= {estilos.retrato}
-        source={require('./imagem/imagem.jpeg')}
-        /> 
         <Image
         style={estilos.retrato}
         source={require('./imagem/retrato.png')}
+       />
+       <Image
+       style={estilos.retrato}
+       source={require('./imagem/images.jpeg')}
+       />
+       <Image
+       style={estilos.retrato}
+       source={require('./imagem/simpsons-capa.webp')}
+       />
+        <Image
+       style={estilos.retrato}
+       source={require('./imagem/os-simpsons-2007.avif')}
        />
       </View>
        
@@ -42,10 +56,12 @@ export default function App() {
 
 const estilos = StyleSheet.create({
   container:{
+   
     flex:1,
     backgroundColor: '#c5c5c5ff',
     alignItems: 'center',
-    paddingTop: 10
+    paddingTop: 10,
+  
   },
   card:{
     width: 250,
@@ -74,10 +90,16 @@ const estilos = StyleSheet.create({
   marginTop: 125,
   padding:20
   },
+  fotos:{
+  alignItems: 'center',
+  flexDirection: 'row',
+  flex: 'wrap'
+  
+  },
   retrato:{
-  width:135,
-  height:200,
-   
+  width:130,
+  height:200
+  
   }
 
 });
