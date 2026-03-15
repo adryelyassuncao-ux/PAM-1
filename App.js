@@ -1,7 +1,5 @@
-import { Image } from 'expo-image';
-import { StyleSheet, Text, View } from 'react-native';
+import{StyleSheet,Text,View,Image,ScrollView } from 'react-native';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
-import{View,Image,StyleSheet,ScrollView} from 'react-native';
 
 export default function App() {
   const size_icons = 38
@@ -9,7 +7,7 @@ export default function App() {
   return (
 
     //inicio foto de perfil
-    <View style={estilos.container}>
+    <ScrollView contentContainerStyle={estilos.container_scroll}>
          <View style={estilos.card}>
            <Image
              style={estilos.imagem}
@@ -50,19 +48,19 @@ export default function App() {
       </View>
        
 
-    </View>
+    </ScrollView>
      
   );
 }
 
 const estilos = StyleSheet.create({
-  container:{
+  container_scroll:{
     width:100,
-    flex:1,
     backgroundColor: 'rgb(0, 0, 0)',
     alignItems: 'center',
-    paddingTop: 10,
-  
+    paddingBottom: 30,
+    paddingTop:50
+    
   },
   card:{
     width: 250,
@@ -83,7 +81,8 @@ const estilos = StyleSheet.create({
     width: '90%',
     backgroundColor: '#807e7e',
     marginTop: -125,
-    zIndex: 0
+    zIndex: 0,
+   
   },
   social:{
   flexDirection: 'row',
@@ -106,6 +105,7 @@ const estilos = StyleSheet.create({
   objectFit:'cover',
   height:300,
   aspectRatio:1,
+  width: '45%'
   }
 
 });
