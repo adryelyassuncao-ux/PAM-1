@@ -4,9 +4,9 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 export default function App() {
   const size_icons = 38
   const color_icons = "#fff"
-  return (
-
+  return ( 
     //inicio foto de perfil
+    
     <ScrollView contentContainerStyle={estilos.container_scroll}>
          <View style={estilos.card}>
            <Image
@@ -55,7 +55,7 @@ export default function App() {
 
 const estilos = StyleSheet.create({
   container_scroll:{
-    width:100,
+    width:'100%',
     backgroundColor: 'rgb(0, 0, 0)',
     alignItems: 'center',
     paddingBottom: 30,
@@ -91,10 +91,10 @@ const estilos = StyleSheet.create({
   padding:20
   },
   fotos:{
-  alignItems: 'flex-start',
+  alignItems: 'center',
   flexDirection: 'row',
   flexWrap:'wrap',
-  justifyContent:'flex-start',
+  justifyContent:'center',
   width:"90%",
   gap:3,
   padding:3
