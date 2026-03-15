@@ -25,8 +25,12 @@ export default function App() {
 
       <View style={estilos.fotos}>
         <Image
+        style= {estilos.retrato}
+        source={require('./imagem/imagem.jpeg')}
+        /> 
+        <Image
         style={estilos.retrato}
-        src="imagem"
+        source={require('./imagem/retrato.png')}
        />
       </View>
        
@@ -71,9 +75,9 @@ const estilos = StyleSheet.create({
   padding:20
   },
   retrato:{
-  width:300,
-  height:700,
-  marginTop:30
+  width:135,
+  height:200,
+   
   }
 
 });
