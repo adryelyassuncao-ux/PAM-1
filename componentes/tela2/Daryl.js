@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Tela3() {
+export default function Tela2() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tela 3 - The Ones Who Live</Text>
-      <Text style={styles.text}>Conteúdo da trilogia 3.</Text>
+      <Text style={styles.title}>Tela 2 - Daryl</Text>
+      <Text style={styles.text}>Conteúdo da trilogia 2.</Text>
     </View>
   );
 }

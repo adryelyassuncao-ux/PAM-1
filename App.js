@@ -1,38 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { View, Button, Image, Text } from 'react-native';
-import logo from '../../assets/logo.jpg';
-import { StyleSheet } from 'react-native';
+import React from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App(props) {
+import TelaInicial from './componentes/TelaInicial/TheWalkinDead.js';
+import Tela1 from './componentes/tela1/Deadcity.js';
+import Tela2 from './componentes/tela2/Daryl.js';
+import Tela3 from './componentes/tela3/TheOnesWhoLive.js';
+
+const Stack = createStackNavigator();
+
+export default function App () {
   return (
-    <View style={styles.container}>
-      <Text>Star wars ordem cronologica</Text>
-      <Image source={logo} style={styles.Imagem}/>
-      <StatusBar style="auto" />
-
-      <Text style={styles.titulo}>
-        Você sabe qual é a ordem cronologica da franquia Star Wars?
-      </Text>
-
-      <Text style={styles.titulo}>
-        Os principais filmes da franquia estão divididos em triologias. Clique no botão
-      </Text>
-    </View> )
-
-  const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  titulo: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  
-  
-});
+    <NavigationContainer >
+      <Stack.Navigator>
+        <Stack.Screen name="Tela Inicial" component={TelaInicial} />
+        <Stack.Screen name="Tela 1" component={Tela1} />
+        <Stack.Screen name="Tela 2" component={Tela2} />
+        <Stack.Screen name="Tela 3" component={Tela3} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
