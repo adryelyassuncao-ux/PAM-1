@@ -1,28 +1,52 @@
 import React from 'react';
-import { View, Button, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function TelaInicial(props) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Star Wars: the cronológica</Text>
+    <SafeAreaView style={styles.continente}>
 
-      <Text style={styles.subtitle}>
-        Os principais filmes da franquia estão divididos em trilogias.
-      </Text>
-      <Text style={styles.text}>
-        Clique em uma das telas para ver a ordem de cada trilogia.
-      </Text>
+      <View style={styles.container}>
+
+        <Text style={styles.title}>THE WALKIN DEAD</Text>
+        <Text style={styles.title}>SPIN-OFF'S</Text>
+        
+
+        <Text style={styles.subtitle}>
+          Temos três spin-off principais de The Walkin Dead.
+        </Text>
+
+        <Text style={styles.text}>
+          Escolha a baixo por qual vai começar.
+        </Text>
   
-      <View style={styles.buttonContainer}>
-        <Button title="Dead city" onPress={() => props.navigation.navigate('Tela 1')} />
+        <View style={styles.buttonContainer}>
+
+          <TouchableOpacity 
+            style={styles.botaoPersonalizado} onPress={() => props.navigation.navigate('Tela 1')}>
+            <Text style={styles.textoBotao}>Dead City</Text>
+
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.buttonContainer}>
+
+          <TouchableOpacity 
+            style={styles.botaoPersonalizado} onPress={() => props.navigation.navigate('Tela 2')}>
+            <Text style={styles.textoBotao}>Daryl Dixon</Text>
+
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity 
+            style={styles.botaoPersonalizado} onPress={() => props.navigation.navigate('Tela 3')}>
+            <Text style={styles.textoBotao}>The One Who Live</Text>
+            
+          </TouchableOpacity>
+        </View>
       </View>
-      <View style={styles.buttonContainer}>
-        <Button title="Daryl" onPress={() => props.navigation.navigate('Tela 2')} />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button title="The One Who Live" onPress={() => props.navigation.navigate('Tela 3')} />
-      </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -33,6 +57,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fff',
+    
   },
   title: {
     fontSize: 24,
@@ -50,8 +75,32 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     textAlign: 'center',
   },
-  buttonContainer: {
-    marginVertical: 8,
-    width: '100%',
+  continente: {
+    flex: 1,
+    backgroundColor: '#ffffff',
   },
+  buttonContainer: {
+    padding: 10,
+  },
+  
+  botaoPersonalizado: {
+    backgroundColor: '#000000',    
+    borderWidth: 2,
+    borderColor: '#808080', 
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 8,
+    minHeight: 48,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 250,  
+    
+  },
+  textoBotao: {
+    color: '#808080',    
+    fontSize: 16,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  
 });
